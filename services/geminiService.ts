@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenerativeAI } from "@google/genai";
 import { resumeData } from '../constants';
 
 console.log('Environment check:', process.env.GEMINI_API_KEY ? 'Key found' : 'Key missing');
@@ -11,7 +11,7 @@ const apiKey = typeof process !== 'undefined' && process.env ? process.env.GEMIN
 
 // Initialize the AI service only if an API key is provided.
 // If not, the rest of the app will still function, and the AI component will show an error.
-const ai = apiKey ? new GoogleGenerativeAI(apiKey) : null;
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 // Function to generate a flat text representation of the resume data
 const getResumeAsText = () => {
