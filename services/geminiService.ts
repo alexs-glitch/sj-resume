@@ -1,6 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { resumeData } from '../constants';
 
+console.log('Environment check:', process.env.API_KEY ? 'Key found' : 'Key missing');
+
 // IMPORTANT: Do not expose this key publicly.
 // It is assumed that process.env.API_KEY is securely handled by the deployment environment.
 // We add a check for `typeof process` to prevent a crash in browser environments.
