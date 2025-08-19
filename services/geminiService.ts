@@ -1,4 +1,4 @@
-import { GoogleGenAI, Chat } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { resumeData } from '../constants';
 
 // IMPORTANT: Do not expose this key publicly.
@@ -9,7 +9,7 @@ const apiKey = typeof process !== 'undefined' && process.env ? process.env.API_K
 
 // Initialize the AI service only if an API key is provided.
 // If not, the rest of the app will still function, and the AI component will show an error.
-const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
+const ai = apiKey ? new GoogleGenerativeAI(apiKey) : null;
 
 // Function to generate a flat text representation of the resume data
 const getResumeAsText = () => {
